@@ -10,7 +10,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 
 public class base {
 
-	public static void main(String[] args) throws MalformedURLException {
+	public static AndroidDriver<AndroidElement> config() throws MalformedURLException {
 		// TODO Auto-generated method stub
 		// chrome - url (navegador)
 		// App .apk, device, 4723
@@ -23,6 +23,8 @@ public class base {
 		cap.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 		cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
 		AndroidDriver<AndroidElement> driver =  new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
+		
+		return driver;
 	}
 
 }
